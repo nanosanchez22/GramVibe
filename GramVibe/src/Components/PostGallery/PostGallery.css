@@ -1,0 +1,12 @@
+.post-gallery {
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Múltiples columnas responsivas */
+    gap: 10px; 
+    padding: 10px; 
+}
+
+.post img {
+    width: 100%; 
+    border-radius: 5px; 
+    object-fit: cover; 
+}

@@ -1,0 +1,18 @@
+#stats_container {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+}
+
+#stats_container div {
+    text-align: center;
+}
+
+#stats_container div h4 {
+    font-size: 20px; 
+    margin: 0;
+}
+
+#stats_container div p {
+    color: #888; 
+}
