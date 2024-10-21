@@ -3,6 +3,33 @@ import './UserHeader.css';
 import linesButton from '../../assets/linesButton.png';
 import addButton from '../../assets/addButton.png';
 
+function UserHeader({ username }) {
+  return ( 
+    <div id='header_container'>
+      <div>{username}</div>
+      <div>
+        <button>
+          <img src={addButton} alt="Add" />
+        </button>
+        <button>
+          <img src={linesButton} alt="Menu" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export default UserHeader;
+
+
+
+
+
+/* import React from 'react';
+import './UserHeader.css';
+import linesButton from '../../assets/linesButton.png';
+import addButton from '../../assets/addButton.png';
+
 
 function UserHeader() {
   return ( 
@@ -49,4 +76,4 @@ function UserHeader() {
     );
 }
 
-export default UserHeader;
+export default UserHeader; */
