@@ -1,0 +1,31 @@
+.login-Title{
+    font-weight: bold;
+    color: rgb(193, 0, 0);
+    font-size: xx-large;
+}
+
+.register-button{
+    margin: 10px;
+    background-color: transparent;
+    font-size: small;
+}
+
+.login-button{
+    margin: 10px;
+    background-color: rgb(242, 119, 205);
+}
+
+.submit-register-button{
+    background-color: rgb(242, 119, 205);
+    margin: 10px;
+    font-size: smaller;
+}
+
+.register-container{
+    display: flex;
+    align-items: center;
+}
+
+.account-text{
+    font-size: small;
+}
