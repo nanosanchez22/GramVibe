@@ -8,6 +8,28 @@ const AuthPage = () => {
   const [formType, setFormType] = useState('login'); // aparece por defecto el login de la cuenta
   const navigate = useNavigate();
 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = async () => {
+    const response = await fetch('http://localhost:3001/api/auth/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    });
+
+    if (response.ok) {
+      const body = await response.json();
+      localStorage.setItem('token', body.token);
+      const userId = body._id;
+      navigate(`/myProfile/${userId}`);
+    }
+
+    console.log(response);
+  }
+
 
   const handleFormSwitch = () => {
     navigate("/register");
@@ -21,16 +43,16 @@ const AuthPage = () => {
       {formType === 'login' &&( 
       <div>
         <div>
-        <input type="text" placeholder="Username" />
+        <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
         </div>
 
 
         <div>
-        <input type="password" placeholder="Password" />
+        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
         </div>
 
         <div>
-        <button className='login-button'>Login</button>
+        <button className='login-button' onClick={handleLogin}>Login</button>
         </div>
 
       </div>

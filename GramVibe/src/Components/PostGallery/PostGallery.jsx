@@ -1,7 +1,7 @@
 import React from 'react';
 import './PostGallery.css';
 
-function PostGallery({ posts }) {
+function PostGallery({ posts = [] }) {
   return (
     <div className="post-gallery">
       {posts.map((post, index) => (
