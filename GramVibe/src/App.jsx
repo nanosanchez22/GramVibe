@@ -13,7 +13,7 @@ import user_profile from './assets/user_profile_pic.jpg';
 
 function App() {
 
-  const userData = {
+/*   const userData = {
     username: 'john_doe',               // Nombre de usuario
     posts: 120,                         // Número de publicaciones
     friends: 85,                        // Número de amigos
@@ -25,15 +25,15 @@ function App() {
       { imageUrl: 'GramVibe/src/assets/pic1.jpg' },
       // Agregar mas imagenes
     ],
-  };
+  }; */
 
 
   return (
     <>
       <Routes>
-        <Route path='/myProfile' element={<MyProfile userData={userData}/>}/>
-        <Route path='/' element={<AuthPage />} />
+        <Route path='/login' element={<AuthPage />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/myProfile/:userId' element={<MyProfile/>}/>
       </Routes>
     </>
   )
