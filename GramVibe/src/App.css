@@ -1,6 +1,6 @@
 
 
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+
 
 /* General reset */
 * {
@@ -21,8 +21,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-
 
 .app-header, .app-footer {
   left: 50%;
@@ -50,8 +48,6 @@ body {
   font-size: 60px;
   font-weight: bold;
 }
-
-
 
 .app-footer {
   background-color: #3897f0;

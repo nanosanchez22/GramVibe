@@ -1,4 +1,7 @@
-/* Contenedor principal de la aplicación */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+
 .app {
   width: 100%;
   max-width: 600px;
@@ -23,6 +26,8 @@
   top: 0;
   z-index: 10;
   border-bottom: 1px solid #ddd;
+  font-family: 'Playwrite GB S', sans-serif; 
+  size: bold;
 }
 
 /* Contenedor del feed (con scroll) */
