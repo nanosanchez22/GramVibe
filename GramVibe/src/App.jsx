@@ -30,18 +30,19 @@ function App() {
 
   return (
 
-    <Router>
+    <>
       <Routes>
-      <div className="App">
+{/*       <div className="App">
         <main className="feed-container">
           <Route path='/' element={<Feed />} />
         </main>
-      </div>
+      </div> */}
+        <Route path='/myFeed' element={<Feed />} />
         <Route path='/login' element={<AuthPage />} />
         <Route path='/register' element={<Register />} />
         <Route path='/myProfile/:userId' element={<MyProfile/>}/>
       </Routes>
-    </Router>
+    </>
   )
 
 }
