@@ -1,0 +1,32 @@
+.sidebar {
+    position: fixed; /* Fija la barra lateral en el lateral izquierdo */
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh; /* Ocupa toda la altura del viewport */
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  .menu {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu li {
+    margin: 15px 0;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .menu li:hover {
+    color: #3897f0;
+  }
+  

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Post from '../../Components/Post/Post.jsx';
+import Sidebar from '../../Components/Sidebar/Sidebar.jsx';
 import styles from './MyFeed.module.css';
 
 const initialPosts = [
@@ -20,15 +21,6 @@ const initialPosts = [
     description: 'Amando mi nueva cámara 📸',
     likes: 89,
     comments: ['¡Qué buena foto!', 'Increíble detalle!'],
-  },
-  {
-    id: 3,
-    username: 'user3',
-    userAvatar: 'https://randomuser.me/api/portraits/women/4.jpg',
-    imageUrl: 'https://via.placeholder.com/600x400',
-    description: 'Amando mi nueva cámara 📸',
-    likes: 678,
-    comments: ['¡Qué buena foto!', 'WOW', 'OMG'],
   }
 ];
 
@@ -41,21 +33,24 @@ const Feed = () => {
 
   return (
     <div className={styles.app}>
-      <header className={styles.appHeader}>
-        <h1>GramVibe</h1>
-      </header>
-
+      <Sidebar />
       <div className={styles.feedContainer}>
-        {posts.length ? (
-          posts.map((post) => <Post key={post.id} post={post} />)
-        ) : (
-          <p>Cargando publicaciones...</p>
-        )}
-      </div>
+        <header className={styles.appHeader}>
+          <h1>GramVibe</h1>
+        </header>
 
-      <footer className={styles.appFooter}>
-        <p>&copy; 2024 GramVibe. Todos los derechos reservados.</p>
-      </footer>
+        <div className={styles.posts}>
+          {posts.length ? (
+            posts.map((post) => <Post key={post.id} post={post} />)
+          ) : (
+            <p>Cargando publicaciones...</p>
+          )}
+        </div>
+
+        <footer className={styles.appFooter}>
+          <p>&copy; 2024 GramVibe. Todos los derechos reservados.</p>
+        </footer>
+      </div>
     </div>
   );
 };
