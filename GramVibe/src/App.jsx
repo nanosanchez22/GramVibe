@@ -1,4 +1,5 @@
 import './App.css'
+import Feed from './Pages/MyFeed/MyFeed/'; 
 import AuthPage from './Pages/AuthPage/AuthPage'
 import Register from './Pages/Register/Register';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -27,16 +28,21 @@ function App() {
     ],
   }; */
 
-
   return (
-    <>
+
+    <Router>
       <Routes>
+      <div className="App">
+        <main className="feed-container">
+          <Route path='/' element={<Feed />} />
+        </main>
+      </div>
         <Route path='/login' element={<AuthPage />} />
         <Route path='/register' element={<Register />} />
         <Route path='/myProfile/:userId' element={<MyProfile/>}/>
       </Routes>
-    </>
+    </Router>
   )
 
 }
-export default App
+export default App;
