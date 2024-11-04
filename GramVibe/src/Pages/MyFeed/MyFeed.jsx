@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Post from '../../Components/Post/Post.jsx';
 import styles from './MyFeed.module.css';
@@ -31,7 +30,6 @@ const initialPosts = [
     likes: 678,
     comments: ['¡Qué buena foto!', 'WOW', 'OMG'],
   }
-  
 ];
 
 const Feed = () => {
@@ -42,18 +40,20 @@ const Feed = () => {
   }, []);
 
   return (
-    <div className={styles.feed}>
-      <header className="app-header">
+    <div className={styles.app}>
+      <header className={styles.appHeader}>
         <h1>GramVibe</h1>
       </header>
 
-      {posts.length ? (
-        posts.map((post) => <Post key={post.id} post={post} />)
-      ) : (
-        <p>Cargando publicaciones...</p>
-      )}
-      
-      <footer className="app-footer">
+      <div className={styles.feedContainer}>
+        {posts.length ? (
+          posts.map((post) => <Post key={post.id} post={post} />)
+        ) : (
+          <p>Cargando publicaciones...</p>
+        )}
+      </div>
+
+      <footer className={styles.appFooter}>
         <p>&copy; 2024 GramVibe. Todos los derechos reservados.</p>
       </footer>
     </div>

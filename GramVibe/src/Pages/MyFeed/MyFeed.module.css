@@ -1,25 +1,55 @@
-.feed {
+/* Contenedor principal de la aplicación */
+.app {
+  width: 100%;
+  max-width: 600px;
+  height: 100vh; /* Ocupa toda la pantalla */
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  gap: 15px;
-  height: 100%; /* Ocupa toda la altura del contenedor */
-  overflow-y: auto; /* Scroll interno en el feed */
+  position: relative;
 }
 
-.feed::-webkit-scrollbar {
+/* Header de la aplicación */
+.appHeader {
+  background-color: #3897f0;
+  color: black;
+  text-align: center;
+  padding: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  position: sticky; /* Fijo al principio del contenedor */
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Contenedor del feed (con scroll) */
+.feedContainer {
+  flex-grow: 1;
+  overflow-y: auto; /* Scroll solo en el área del feed */
+  padding: 10px;
+  background-color: #fafafa;
+}
+
+/* Footer de la aplicación */
+.appFooter {
+  background-color: #3897f0;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border-top: 1px solid #ddd;
+}
+
+/* Scroll personalizado para el feed */
+.feedContainer::-webkit-scrollbar {
   width: 8px;
 }
 
-.feed::-webkit-scrollbar-thumb {
+.feedContainer::-webkit-scrollbar-thumb {
   background-color: #ddd;
   border-radius: 4px;
 }
-
-.loadMoreButton:hover {
-  background-color: #2878c7;
-}
-
-
-
