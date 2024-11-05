@@ -20,7 +20,7 @@ const Register = () => {
 
     if (response.ok) {
       const body = await response.json();
-      //localStorage.setItem('token', body.token);
+      /*localStorage.setItem('token', body.token);*/
       navigate('/login');
     }
 

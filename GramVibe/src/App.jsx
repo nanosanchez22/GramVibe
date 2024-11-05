@@ -32,11 +32,6 @@ function App() {
 
     <>
       <Routes>
-{/*       <div className="App">
-        <main className="feed-container">
-          <Route path='/' element={<Feed />} />
-        </main>
-      </div> */}
         <Route path='/myFeed' element={<Feed />} />
         <Route path='/login' element={<AuthPage />} />
         <Route path='/register' element={<Register />} />
