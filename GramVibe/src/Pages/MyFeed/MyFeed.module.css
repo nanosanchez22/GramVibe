@@ -1,45 +1,45 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
 
-.app {
-  width: 100%;
-  max-width: 600px;
-  height: 100vh; /* Ocupa toda la pantalla */
-  background-color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
+/* Contenedor principal de la aplicación */
+.container {
   display: flex;
-  flex-direction: column;
-  position: relative;
+  height: 100vh; /* Ocupa toda la altura del viewport */
+  background-color: #fafafa;
 }
 
-/* Header de la aplicación */
-.appHeader {
+/* Estilo del sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: 100vh; /* Asegura que la barra lateral ocupe toda la altura */
+  position: sticky;
+  top: 0; /* Fijo al principio del contenedor */
+}
+
+/* Estilo del feed */
+.feed {
+  flex-grow: 1;
+  overflow-y: auto; /* Scroll solo en el feed */
+  padding: 20px;
+  background-color: #fafafa;
+}
+
+/* Header del feed */
+.header {
   background-color: #3897f0;
   color: black;
   text-align: center;
   padding: 15px;
   font-size: 24px;
   font-weight: bold;
-  position: sticky; /* Fijo al principio del contenedor */
-  top: 0;
-  z-index: 10;
+  font-family: 'Playwrite GB S', sans-serif;
   border-bottom: 1px solid #ddd;
-  font-family: 'Playwrite GB S', sans-serif; 
-  size: bold;
 }
 
-/* Contenedor del feed (con scroll) */
-.feedContainer {
-  flex-grow: 1;
-  overflow-y: auto; /* Scroll solo en el área del feed */
-  padding: 10px;
-  background-color: #fafafa;
-}
-
-/* Footer de la aplicación */
-.appFooter {
+/* Footer del feed */
+.footer {
   background-color: #3897f0;
   color: white;
   text-align: center;
@@ -47,14 +47,20 @@
   font-size: 18px;
   font-weight: bold;
   border-top: 1px solid #ddd;
+  margin-top: 20px;
+}
+
+/* Estilo de las publicaciones */
+.posts {
+  margin-top: 20px;
 }
 
 /* Scroll personalizado para el feed */
-.feedContainer::-webkit-scrollbar {
+.feed::-webkit-scrollbar {
   width: 8px;
 }
 
-.feedContainer::-webkit-scrollbar-thumb {
+.feed::-webkit-scrollbar-thumb {
   background-color: #ddd;
   border-radius: 4px;
 }

@@ -32,13 +32,12 @@ const Feed = () => {
   }, []);
 
   return (
-    <div className={styles.app}>
+    <div className={styles.container}>
       <Sidebar />
-      <div className={styles.feedContainer}>
-        <header className={styles.appHeader}>
+      <div className={styles.feed}>
+        <header className={styles.header}>
           <h1>GramVibe</h1>
         </header>
-
         <div className={styles.posts}>
           {posts.length ? (
             posts.map((post) => <Post key={post.id} post={post} />)
@@ -46,8 +45,7 @@ const Feed = () => {
             <p>Cargando publicaciones...</p>
           )}
         </div>
-
-        <footer className={styles.appFooter}>
+        <footer className={styles.footer}>
           <p>&copy; 2024 GramVibe. Todos los derechos reservados.</p>
         </footer>
       </div>
