@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './Sidebar.module.css';
 
 const Sidebar = () => {
@@ -58,7 +58,9 @@ const Sidebar = () => {
       <h2 className={styles.logo}>GramVibe</h2>
       <ul className={styles.menu}>
         <li className={styles.menuItem}>
+          <Link to="/myFeed">
           <i className="fas fa-home"></i> Home
+          </Link>
         </li>
         <li className={styles.menuItem}>
           <i className="fas fa-heart"></i> Notifications
@@ -67,7 +69,9 @@ const Sidebar = () => {
           <i className="fas fa-plus-square"></i> Create
         </li>
         <li className={styles.menuItem} onClick={goToProfile}>
+          <Link to={`/myProfile/${userId}`}>
           <i className="fas fa-user-circle"></i> Profile
+          </Link>
         </li>
       </ul>
     </div>
