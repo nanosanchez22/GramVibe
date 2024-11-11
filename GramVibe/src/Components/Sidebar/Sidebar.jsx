@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import styles from './Sidebar.module.css';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import styles from "./Sidebar.module.css";
+import { jwtDecode } from "jwt-decode";
 
 const Sidebar = () => {
   const [userId, setUserId] = useState(null);
@@ -9,34 +10,37 @@ const Sidebar = () => {
   // Función para obtener el perfil del usuario y extraer el userId
   useEffect(() => {
     const fetchUserProfile = async () => {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem("token");
       if (token) {
         try {
-          console.log('Token encontrado, iniciando fetch del perfil...');
-          const response = await fetch('http://localhost:3001/api/user/profile', {
-            headers: {
-              'Authorization': `Bearer ${token}`,
-            },
-          });
+          console.log("Token encontrado, iniciando fetch del perfil...");
+          const response = await fetch(
+            "http://localhost:3001/api/user/profile",
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
 
           if (!response.ok) {
-            throw new Error('Error al obtener el perfil del usuario');
+            throw new Error("Error al obtener el perfil del usuario");
           }
 
           const data = await response.json();
-          console.log('Datos del perfil obtenidos:', data);
+          console.log("Datos del perfil obtenidos:", data);
 
           // Aquí asumimos que data tiene un campo userId
           if (data.userId) {
             setUserId(data.userId);
           } else {
-            console.error('El perfil no contiene un userId');
+            console.error("El perfil no contiene un userId");
           }
         } catch (error) {
-          console.error('Error al obtener el perfil del usuario:', error);
+          console.error("Error al obtener el perfil del usuario:", error);
         }
       } else {
-        console.error('No se encontró un token en el localStorage');
+        console.error("No se encontró un token en el localStorage");
       }
     };
 
@@ -45,11 +49,15 @@ const Sidebar = () => {
 
   // Función para navegar al perfil del usuario
   const goToProfile = () => {
-    if (userId) {
-      console.log('Navegando al perfil del usuario con userId:', userId);
-      navigate(`/myProfile/${userId}`);
+    const token = localStorage.getItem("token");
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      const idToken = decodedToken.userId;
+      console.log("token", idToken);
+      setUserId(idToken);
+      navigate(`/myProfile/${idToken}`);
     } else {
-      console.error('userId no está disponible, no se puede navegar al perfil');
+      console.error("userId no está disponible, no se puede navegar al perfil");
     }
   };
 

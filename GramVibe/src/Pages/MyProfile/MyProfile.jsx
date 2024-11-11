@@ -72,6 +72,10 @@ function MyProfile() {
   if (!profileData) {
     return <h1>Not Implemented</h1>;
   }
+
+  const navigateToHome = () => {
+    navigate("/myFeed");
+  }
     
 
   return (
@@ -111,7 +115,7 @@ function MyProfile() {
       <PostGallery posts={profileData.postsArray || [] } onPostClick={handlePostClick} />
 
       <nav>
-        <div>
+        <div onClick={navigateToHome}>
           <img src={homeWhiteButton} alt="Home button" />
         </div>
         <div>

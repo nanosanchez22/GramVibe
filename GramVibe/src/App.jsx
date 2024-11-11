@@ -33,7 +33,7 @@ function App() {
     <>
       <Routes>
         <Route path='/myFeed' element={<Feed />} />
-        <Route path='/login' element={<AuthPage />} />
+        <Route path='/' element={<AuthPage />} />
         <Route path='/register' element={<Register />} />
         <Route path='/myProfile/:userId' element={<MyProfile/>}/>
       </Routes>
