@@ -9,6 +9,7 @@ import pic1 from './assets/pic1.jpg';
 import pic2 from './assets/pic2.jpg';
 import pic3 from './assets/pic3.jpg';
 import user_profile from './assets/user_profile_pic.jpg';
+import EditProfile from './Pages/EditProfile/EditProfile';
 
 
 
@@ -22,6 +23,7 @@ function App() {
         <Route path='/login' element={<AuthPage />} />
         <Route path='/register' element={<Register />} />
         <Route path='/myProfile/:userId' element={<MyProfile/>}/>
+        <Route path="/editProfile/:userId" element={<EditProfile />} />
         <Route path='*' element={<Navigate to="/login" />} />
 
       </Routes>

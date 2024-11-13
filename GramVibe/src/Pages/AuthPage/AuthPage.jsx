@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import './AuthPage.css';
 import { useNavigate } from 'react-router-dom';
 
-
-
 const AuthPage = () => {
-  const [formType, setFormType] = useState('login'); // aparece por defecto el login de la cuenta
+  const [formType, setFormType] = useState('login'); // Aparece por defecto el login de la cuenta
   const navigate = useNavigate();
 
   const [email, setEmail] = useState('');
@@ -28,43 +26,49 @@ const AuthPage = () => {
     }
 
     console.log(response);
-  }
-
+  };
 
   const handleFormSwitch = () => {
-    navigate("/register");
+    navigate('/register');
   };
 
   return (
-    <div>
-      <h1 className="login-Title">GramVibe</h1>
+    <div className="authPage-container">
+      <div className="authPage-card">
+        <h1 className="login-title">GramVibe</h1>
 
-      {/*solamente se muestra el formulario si el formType es login */}
-      {formType === 'login' &&( 
-      <div>
-        <div>
-        <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+        {/* Solamente se muestra el formulario si el formType es login */}
+        {formType === 'login' && (
+          <div className="form-container">
+            <input
+              type="text"
+              className="input-field"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+
+            <input
+              type="password"
+              className="input-field"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+
+            <button className="button login-button" onClick={handleLogin}>
+              Login
+            </button>
+          </div>
+        )}
+
+        <div className="register-container">
+          <p className="account-text">If you don't have an account, click here:</p>
+          <button className="button register-button" onClick={handleFormSwitch}>
+            Register
+          </button>
         </div>
-
-
-        <div>
-        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-        </div>
-
-        <div>
-        <button className='login-button' onClick={handleLogin}>Login</button>
-        </div>
-
       </div>
-      )}
-
-      <div>
-        <div className='register-container'>
-          <p className='account-text'>If you don't have an account, click here</p>
-        <button className = 'register-button' onClick={handleFormSwitch}>Register</button>
-        </div>
-      </div>
-      
     </div>
   );
 };

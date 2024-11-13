@@ -84,3 +84,10 @@
 #saveButton:hover {
     background-color: #2878c7;
 }
+
+.bio {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
