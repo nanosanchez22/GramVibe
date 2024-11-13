@@ -27,15 +27,34 @@
   display: flex;
   align-items: center;
   margin: 15px 0;
+
   font-size: 18px;
   cursor: pointer;
 }
 
-.menuItem i {
-  margin-right: 10px; /* Espacio entre el icono y el texto */
-  font-size: 20px; /* Ajustar el tamaño del icono */
+a:visited, a:active {
+  color: initial; 
+  text-decoration: none;
+  
 }
 
-.menuItem:hover {
-  color: #3897f0;
+a {
+  text-decoration: none; 
 }
+
+a:visited, a:active, a:focus {
+  text-decoration: none; 
+}
+
+.menuItem i {
+  margin-right: 10px; 
+  font-size: 20px; 
+  width: 24px;
+}
+
+.menuItem:hover, .menuItem:hover a {
+  color: #3897f0; 
+}
+
+
+
