@@ -1,7 +1,7 @@
 import React from 'react';
 import './ProfileStats.css';
 
-function ProfileStats({ postsCount, friendsCount }) {
+const  ProfileStats =  ({ postsCount, friendsCount, profilePic }) => {
   return (
     <div id="stats_container">
       <div className="stat-item">

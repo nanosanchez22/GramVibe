@@ -30,13 +30,16 @@ function MyProfile() {
 
         const data = await response.json();
         setProfileData(data);
-        setDescription(data.description);
+        setDescription(data.user.description);
       } catch (error) {
         console.error('Error al obtener el perfil del usuario:', error);
       }
     };
     fetchProfileData();
   }, [userId]);
+
+
+  console.log("profile data", profileData);
 
   const handleEditProfile = async () => {
     const formData = new FormData();
@@ -75,7 +78,7 @@ function MyProfile() {
         {/* Header con el nombre del usuario */}
         <header className="header">
           {profileData ? (
-            <UserHeader username={profileData.username} />
+            <UserHeader username={profileData.user.username} />
           ) : (
             <p className="loading-text">Loading...</p>
           )}
@@ -87,16 +90,16 @@ function MyProfile() {
             <section id="profileDetails">
               <div className="profile-info">
                 <img
-                  src={profileData.profilePic || "https://via.placeholder.com/150"}
+                  src={profileData.user.profilePicture || "https://via.placeholder.com/150"}
                   alt="Profile"
                   className="profile-picture"
                   onError={(e) => (e.target.src = "https://via.placeholder.com/150")}
                 />
                 <div className="profile-stats-container">
                   <ProfileStats
-                    postsCount={profileData.posts}
-                    friendsCount={profileData.friends}
-                    profilePic={profileData.profilePic}
+                    postsCount={profileData.posts.length || []}
+                    friendsCount={profileData.user.friends.length || 0}
+                    profilePic={profileData.user.profilePicture || ""}
                   />
                   <button id="edit_profile_button" onClick={() => setIsEditing(true)}>
                     Edit Profile
@@ -132,7 +135,7 @@ function MyProfile() {
   
             {/* Galería de posts */}
             <PostGallery
-              posts={profileData.postsArray || []}
+              posts={profileData.posts || []}
               onPostClick={handlePostClick}
             />
           </>
