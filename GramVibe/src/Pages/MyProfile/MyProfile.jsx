@@ -26,10 +26,30 @@ function MyProfile() {
     });
   };
 
-  useEffect(() => {
-    loadProfileData();
-  }, [userId, navigate]); // Dependencia en userId y navigate para asegurar la recarga al regresar
+  uuseEffect(() => {
+    const fetchProfileData = async () => {
+      try {
+        const response = await fetch(`http://localhost:3001/api/user/profile/${userId}`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
+          },
+        });
 
+        if (!response.ok) {
+          throw new Error('Error al obtener el perfil del usuario');
+        }
+
+        const data = await response.json();
+        setProfileData(data);
+      } catch (error) {
+        console.error('Error al obtener el perfil del usuario:', error);
+      }
+    };
+
+    fetchProfileData();
+    loadProfileData();
+  }, [userId]);
+  
   // Función para manejar el clic en un post
   const handlePostClick = (postId) => {
     navigate(`/post/${postId}`);
@@ -46,7 +66,7 @@ function MyProfile() {
         {/* Header con el nombre del usuario */}
         <header className="header">
           {profileData ? (
-            <UserHeader username={profileData.username} />
+            <UserHeader username={profileData.user.username} />
           ) : (
             <p className="loading-text">Loading...</p>
           )}
@@ -58,7 +78,7 @@ function MyProfile() {
             <section id="profileDetails">
               <div className="profile-info">
                 <img
-                  src={profileData.profilePic || "https://via.placeholder.com/150"}
+                  src={profileData.user.profilePicture || "https://via.placeholder.com/150"}
                   alt="Profile"
                   className="profile-picture"
                   onError={(e) => (e.target.src = "https://via.placeholder.com/150")}
@@ -82,7 +102,7 @@ function MyProfile() {
             
             {/* Galería de posts */}
             <PostGallery
-              posts={profileData.postsArray || []}
+              posts={profileData.posts || []}
               onPostClick={handlePostClick}
             />
           </>
