@@ -5,10 +5,7 @@ import Register from './Pages/Register/Register';
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import MyProfile from './Pages/MyProfile/MyProfile';
 import React from 'react';
-import pic1 from './assets/pic1.jpg';
-import pic2 from './assets/pic2.jpg';
-import pic3 from './assets/pic3.jpg';
-import user_profile from './assets/user_profile_pic.jpg';
+import UserProfile from './Pages/UserProfile/UserProfile';
 
 
 
@@ -22,6 +19,7 @@ function App() {
         <Route path='/login' element={<AuthPage />} />
         <Route path='/register' element={<Register />} />
         <Route path='/myProfile/:userId' element={<MyProfile/>}/>
+        <Route path='/profile/:userId' element={<UserProfile/>}/>
         <Route path='*' element={<Navigate to="/login" />} />
 
       </Routes>

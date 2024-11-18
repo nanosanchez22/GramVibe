@@ -39,3 +39,8 @@
 .menuItem:hover {
   color: #3897f0;
 }
+
+a{
+  text-decoration: none ;
+  color: inherit;
+}

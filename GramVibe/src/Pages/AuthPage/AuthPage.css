@@ -1,31 +1,87 @@
-.login-Title{
-    font-weight: bold;
-    color: rgb(193, 0, 0);
-    font-size: xx-large;
-}
-
-.register-button{
-    margin: 10px;
-    background-color: transparent;
-    font-size: small;
-}
-
-.login-button{
-    margin: 10px;
-    background-color: rgb(242, 119, 205);
-}
-
-.submit-register-button{
-    background-color: rgb(242, 119, 205);
-    margin: 10px;
-    font-size: smaller;
-}
-
-.register-container{
+.auth-container {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-}
-
-.account-text{
-    font-size: small;
-}
+    height: 100vh;
+    background-color: #f0f2f5;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Título principal */
+  .login-Title {
+    font-weight: bold;
+    color: #c10000;
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Input para login y registro */
+  input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  /* Botones */
+  .login-button,
+  .submit-register-button,
+  .register-button,
+  .back-button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-button,
+  .submit-register-button {
+    background-color: #f277cd;
+    color: white;
+  }
+  
+  .login-button:hover,
+  .submit-register-button:hover {
+    background-color: #d964b8;
+  }
+  
+  .register-button {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+  }
+  
+  .register-button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .back-button {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    color: #000;
+  }
+  
+  .back-button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Texto de "No tienes una cuenta" */
+  .account-text {
+    font-size: 0.9rem;
+    margin-top: 20px;
+  }
+  
+  /* Contenedor de los formularios */
+  .form-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  

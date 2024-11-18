@@ -23,6 +23,7 @@ const AuthPage = () => {
     if (response.ok) {
       const body = await response.json();
       localStorage.setItem('token', body.token);
+      localStorage.setItem('userId', body._id);
       const userId = body._id;
       navigate(`/myProfile/${userId}`);
     }

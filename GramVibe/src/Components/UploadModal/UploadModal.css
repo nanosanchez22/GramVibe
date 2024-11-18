@@ -1,0 +1,93 @@
+/* UploadModal.css */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.modalContent h2 {
+  margin-bottom: 20px;
+  font-size: 1.6em;
+  color: #333;
+}
+
+.modalContent input[type="file"] {
+  display: none;
+}
+
+.fileLabel {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+  color: #555;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.fileLabel:hover {
+  background-color: #e0e0e0;
+}
+
+.modalContent textarea {
+  width: 100%;
+  height: 80px;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  resize: none;
+  font-size: 0.95em;
+  color: #333;
+}
+
+.modalContent .buttonGroup {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modalContent button {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: white;
+  background-color: #4A90E2;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 48%;
+}
+
+.modalContent button:hover {
+  background-color: #357ABD;
+}
+
+.modalContent .cancelButton {
+  background-color: #cccccc;
+  color: #555;
+}
+
+.modalContent .cancelButton:hover {
+  background-color: #b3b3b3;
+}

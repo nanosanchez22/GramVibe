@@ -1,32 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
 
-/* Contenedor principal de la aplicación */
 .container {
   display: flex;
-  height: 100vh; /* Ocupa toda la altura del viewport */
+  height: 100vh; 
+  width: 100vw;
+  min-width: 850px;
+  max-width: 1200px;
   background-color: #fafafa;
 }
 
-/* Estilo del sidebar */
 .sidebar {
   width: 250px;
   background-color: #ffffff;
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  height: 100vh; /* Asegura que la barra lateral ocupe toda la altura */
+  height: 100vh; 
   position: sticky;
-  top: 0; /* Fijo al principio del contenedor */
+  top: 0; 
 }
 
-/* Estilo del feed */
 .feed {
   flex-grow: 1;
-  overflow-y: auto; /* Scroll solo en el feed */
+  overflow-y: auto; 
+  width: 100%;
+  min-width: 600px;
+  max-width: 950px;
+  margin: 20px;
   padding: 20px;
   background-color: #fafafa;
 }
 
-/* Header del feed */
 .header {
   background-color: #3897f0;
   color: black;
@@ -38,7 +41,6 @@
   border-bottom: 1px solid #ddd;
 }
 
-/* Footer del feed */
 .footer {
   background-color: #3897f0;
   color: white;
@@ -50,12 +52,10 @@
   margin-top: 20px;
 }
 
-/* Estilo de las publicaciones */
 .posts {
   margin-top: 20px;
 }
 
-/* Scroll personalizado para el feed */
 .feed::-webkit-scrollbar {
   width: 8px;
 }
@@ -64,3 +64,4 @@
   background-color: #ddd;
   border-radius: 4px;
 }
+
