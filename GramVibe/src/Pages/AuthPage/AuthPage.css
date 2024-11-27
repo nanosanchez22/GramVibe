@@ -8,7 +8,6 @@
     font-family: Arial, sans-serif;
   }
   
-  /* Título principal */
   .login-Title {
     font-weight: bold;
     color: #c10000;
@@ -16,7 +15,6 @@
     margin-bottom: 20px;
   }
   
-  /* Input para login y registro */
   input {
     padding: 10px;
     margin: 10px 0;
@@ -26,7 +24,6 @@
     font-size: 1rem;
   }
   
-  /* Botones */
   .login-button,
   .submit-register-button,
   .register-button,
@@ -70,13 +67,11 @@
     background-color: #f0f0f0;
   }
   
-  /* Texto de "No tienes una cuenta" */
   .account-text {
     font-size: 0.9rem;
     margin-top: 20px;
   }
   
-  /* Contenedor de los formularios */
   .form-container {
     background-color: #ffffff;
     padding: 40px;

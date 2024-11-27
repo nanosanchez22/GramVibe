@@ -1,35 +1,30 @@
-/* Contenedor principal del header */
 .header_container {
     display: flex;
     justify-content: space-between; 
     align-items: center; 
-    padding: 15px 20px; /* Espaciado más grande para darle mayor importancia */
-    background-color: #f9f9f9; /* Color más claro para una apariencia más limpia */
+    padding: 15px 20px; 
+    background-color: #f9f9f9; 
     border-bottom: 1px solid #e0e0e0; 
     width: 600px; 
 }
-
-/* Sección del nombre de usuario */
 .username_section {
-    flex: 2; /* Se le da más espacio al nombre de usuario */
-    text-align: center; /* Nombre de usuario centrado */
+    flex: 2; 
+    text-align: center; 
 }
 
 .username_section h1 {
-    font-size: 24px; /* Tamaño más grande para destacar el nombre */
+    font-size: 24px; 
     margin: 0;
     font-weight: bold;
 }
 
-/* Sección de los botones */
 .buttons_section {
-    flex: 1; /* Menos espacio para los botones */
+    flex: 1; 
     display: flex;
     justify-content: flex-end; 
     align-items: center;
 }
 
-/* Botones del header */
 .header_button {
     background: none; 
     border: none; 
@@ -40,7 +35,7 @@
 }
 
 .header_button:hover {
-    transform: scale(1.1); /* Añadir un pequeño efecto al pasar el mouse */
+    transform: scale(1.1); 
 }
 
 .header_button img {

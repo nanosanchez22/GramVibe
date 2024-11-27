@@ -93,7 +93,7 @@ return (
         )}
       </div>
       <footer className={styles.footer}>
-        <p>&copy; 2024 fakestagram. Todos los derechos reservados.</p>
+        <p>&copy; 2024 GramVibe. Todos los derechos reservados.</p>
       </footer>
     </div>
   </div>
